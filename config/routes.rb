@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   post 'sessions/login' => 'sessions#login'
 
+  get  'users/new' => 'users#new'
+
   get 'users/:id' => 'users#show'
 
   post 'users/:id' => 'users#create'
