@@ -3,4 +3,12 @@
 <% @user.secrets.each do |s|%>
 	<p><%=s.content%></p>
 <%end%>
+<hr>
 <a href="/users/<%=@user.id%>/edit">Edit Profile</a>
+
+<form action="/secrets/<%=@user.id%>" method = "post">
+	<input type="hidden" name = 'authenticity_token' value = "<%=form_authenticity_token%>">
+	<label for="content">New Secret</label>
+	<input type="text" name = "content" id = "content">
+	<input type="submit" value = "Submit">
+</form>
