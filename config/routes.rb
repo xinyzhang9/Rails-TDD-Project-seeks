@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'users/show'
+  get 'secrets/index'=> 'secrets#index'
+
+  get 'secrets' => 'secrets#index'
 
   get 'sessions/index'=>'sessions#index'
-
   
   get 'sessions/new' => 'sessions#new'
 
@@ -22,8 +23,8 @@ Rails.application.routes.draw do
 
   delete 'users/:id' => 'users#destroy'
 
-  resources :users
-  resources :sessions
+
+  resources :users,:sessions,:secrets
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
