@@ -2,6 +2,7 @@
 <%=@user.name%>
 <% @user.secrets.each do |s|%>
 	<p><%=s.content%></p>
+	<p><%=s.likes.count%> likes</p>
 	<form action="/secrets/<%=s.id%>" method = "post">
 		<input type="hidden" name = "authenticity_token" value = "<%=form_authenticity_token%>">
 		<input type="hidden" name = "_method" value = "delete">
