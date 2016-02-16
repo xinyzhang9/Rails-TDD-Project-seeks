@@ -1,4 +1,5 @@
 class SecretsController < ApplicationController
+	before_action :require_login, only: [:index,:create,:destroy]
   def index
   	@secrets = Secret.all
   end
@@ -14,5 +15,12 @@ class SecretsController < ApplicationController
   		flash[:errors] = secret.errors.full_messages
   		redirect_to @user
   	end
+  end
+
+  def destroy
+  	secret = Secret.find(params[:id])
+  	user = secret.user
+  	secret.destroy
+  	redirect_to user
   end
 end

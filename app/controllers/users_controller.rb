@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	before_action :require_login,except:[:new,:create]
 	# attr_accessor :password
 	def index
 	end
@@ -17,6 +18,7 @@ class UsersController < ApplicationController
   		
   	else
   		@user.save
+  		session[:user_id] = @user.id
   		redirect_to @user
   	end
   end
