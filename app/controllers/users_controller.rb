@@ -34,12 +34,14 @@ class UsersController < ApplicationController
   		flash[:errors] = user.errors.full_messages
   	end
   	redirect_to user
-  	# if @user.save
-  	# 	redirect_to @user
-  	# else
-  	# 	flash[:errors] = @user.save.errors.full_messages
-  	# 	redirect_to @user
-  	# end
+
+  end
+
+  def destroy
+  	user = User.find(params[:id])
+  	user.destroy
+  	reset_session
+  	redirect_to "/sessions/new"
   end
 
   private

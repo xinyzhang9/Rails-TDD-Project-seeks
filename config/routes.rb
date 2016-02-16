@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   patch 'users/:id' => 'users#update'
 
+  delete 'users/:id' => 'users#destroy'
+
   resources :users
   resources :sessions
   # The priority is based upon order of creation: first created -> highest priority.
