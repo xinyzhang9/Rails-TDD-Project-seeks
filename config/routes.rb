@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   delete "secrets/:id" => 'secrets#destroy'
 
+  post "likes" => 'likes#index'
+
   resources :users,:sessions,:secrets
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
