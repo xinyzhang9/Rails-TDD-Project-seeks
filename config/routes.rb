@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   post 'users/:id' => 'users#create'
 
+  patch 'users/:id' => 'users#update'
+
   resources :users
   resources :sessions
   # The priority is based upon order of creation: first created -> highest priority.
