@@ -10,4 +10,12 @@ class LikesController < ApplicationController
 		end
 		redirect_to :back
 	end
+
+	def destroy
+		like = Like.where(:user_id=>current_user.id).where(:secret_id=>params[:secret_id]).first
+		if like != nil
+			like.destroy
+		end
+		redirect_to :back
+	end
 end

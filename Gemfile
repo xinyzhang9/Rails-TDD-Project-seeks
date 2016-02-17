@@ -44,4 +44,4 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'hirb', '~> 0.7.3'
